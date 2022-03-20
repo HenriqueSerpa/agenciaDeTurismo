@@ -1,0 +1,37 @@
+@using Microsoft.AspNetCore.Http;
+@model List<PacotesTuristicos>
+@{
+    ViewData["Title"] = "Lista de Pacotes";
+
+}
+<h1>@ViewData["Title"]</h1>
+
+    <table class="table">
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Origem</th>
+            <th>Destino</th>
+            <th>Atrativos</th>
+            <th>Saída</th>
+            <th>Retorno</th>
+        </tr>
+        @foreach (PacotesTuristicos ptr in Model)
+        {
+            <tr>
+                <td>@ptr.Id</td>
+                <td>@ptr.Nome</td>
+                <td>@ptr.Origem</td>
+                <td>@ptr.Destino</td>
+                <td>@ptr.Atrativos</td>
+                <td>@ptr.Saida</td>
+                <td>@ptr.Retorno</td>
+                <td>@ptr.Atrativos</td>
+                <td>@ptr.Usuario</td>
+                <td>
+                    <a href="/PacotesTuristicos/Remover?Id=@ptr.Id">Excluir pacote</a>
+                    <a href="/PacotesTuristicos/AlterarPacote?Id=@ptr.Id">Alterar pacote</a>
+                </td>
+            </tr>   
+        }
+        </table>

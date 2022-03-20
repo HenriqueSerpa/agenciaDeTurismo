@@ -1,0 +1,23 @@
+CREATE DATABASE Turismo;
+
+CREATE TABLE Usuario(
+    Id int (11) AUTO_INCREMENT,
+    Nome varchar (200),
+    Login varchar (30),
+    Senha varchar (30),
+    DataNascimento datetime,
+    PRIMARY KEY (id));
+
+CREATE TABLE PacotesTuristicos(
+    Id int (11) AUTO_INCREMENT,
+    Nome varchar (200),
+    Origem varchar (200),
+    Destino varchar (200),
+    Atrativos varchar (200),
+    Saida datetime,
+    Retorno datetime,
+    Usuario int (11),
+    PRIMARY KEY (Id),
+    FOREIGN KEY (Usuario) REFERENCES Usuario(Id));
+
+
